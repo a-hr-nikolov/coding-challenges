@@ -21,13 +21,14 @@ Output: true
 
 const containsDuplicate = array => {
   const uniqueValues = new Set();
-  for (let item of array) {
-    if (uniqueValues.has(item)) return true;
-    uniqueValues.add(item);
+  for (let i = 0; i < array.length; i++) {
+    if (uniqueValues.has(array[i])) return true;
+    uniqueValues.add(array[i]);
   }
+
   return false;
 };
 
-const nums = [1, 2, 3, 4];
+const nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2];
 
 console.log(containsDuplicate(nums));

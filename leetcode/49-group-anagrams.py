@@ -13,6 +13,7 @@ class Solution:
         return grouped.values()
 
 
+# Possibly better time complexity but not certain
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         grouped = {}

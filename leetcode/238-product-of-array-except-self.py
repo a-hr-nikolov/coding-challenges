@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Solution2:
+class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         acc = 1
         output = [1] * len(nums)
@@ -17,7 +17,7 @@ class Solution2:
         return output
 
 
-solution = Solution2()
+solution = Solution()
 
 some_list = [1, 2, 3, 4]
 

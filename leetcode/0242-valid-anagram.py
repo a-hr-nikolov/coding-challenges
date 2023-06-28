@@ -13,9 +13,3 @@ class Solution:
                 return False
 
         return True
-
-
-s = "anagrat"
-t = "nagaram"
-
-print(is_anagram_less_space(s, t))

@@ -23,13 +23,3 @@ class Solution:
                 nums1[k] = nums2[j]
                 j -= 1
             k -= 1
-
-
-solution = Solution()
-nums1 = [2, 0]
-m = 1
-nums2 = [1]
-n = 1
-
-solution.merge(nums1, m, nums2, n)
-print(nums1)

@@ -1,5 +1,3 @@
-from typing import List
-
 """
 The first solution has a O(n) space complexity and O(n log n) time complexity.
 Leetcode proposes that we should have a better than O(n log n) time complex algorithm. 
@@ -7,6 +5,8 @@ Leetcode proposes that we should have a better than O(n log n) time complex algo
 The second solution addresses that issue through reverse bucket sort, which ends up with 
 O(n)
 """
+
+from typing import List
 
 
 class Solution:

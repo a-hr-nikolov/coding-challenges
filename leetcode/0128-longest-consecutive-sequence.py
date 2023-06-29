@@ -8,7 +8,7 @@ class Solution:
         for num in nums:  # O(n + k) time
             if num - 1 in num_set:
                 continue
-            length = 0
+            length = 1
             while num + length in num_set:
                 length += 1
             if longest_seq < length:

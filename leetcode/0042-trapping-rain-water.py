@@ -37,8 +37,38 @@ class Solution:
         return trapped_all
 
 
+class Solution2:
+    def trap(self, height: List[int]) -> int:
+        if not height:
+            return 0
+        left = 0
+        right = len(height) - 1
+        max_left = height[0]
+        max_right = height[right]
+        trapped = 0
+
+        while left < right:
+            if max_left <= max_right:
+                left += 1
+                to_fill = max_left - height[left]
+                if to_fill < 0:
+                    max_left = height[left]
+                else:
+                    trapped += to_fill
+            else:
+                right -= 1
+                to_fill = max_right - height[right]
+                if to_fill < 0:
+                    max_right = height[right]
+                else:
+                    trapped += to_fill
+
+        return trapped
+
+
 case1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]  # 6
 case2 = [4, 2, 0, 3, 2, 5]  # 9
+case3 = [5, 5, 1, 7, 1, 1, 5, 2, 7, 6]  # 23
 
-solution = Solution()
-print(solution.trap(case2))
+solution = Solution2()
+print(solution.trap(case3))

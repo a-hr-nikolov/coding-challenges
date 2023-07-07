@@ -50,3 +50,30 @@ class MinStack2:
     def getMin(self) -> int:
         if self.min_stack:
             return self.min_stack[-1]
+
+
+class MinStack3:
+    def __init__(self):
+        self.stack = []
+        self.min_indices = []
+
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+        if not self.min_indices:
+            self.min_indices.append(0)
+            return
+        if val < self.stack[self.min_indices[-1]]:
+            self.min_indices.append(len(self.stack) - 1)
+        else:
+            self.min_indices.append(self.min_indices[-1])
+
+    def pop(self) -> None:
+        self.stack.pop()
+        self.min_indices.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        if self.min_indices:
+            return self.stack[self.min_indices[-1]]

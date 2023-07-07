@@ -9,16 +9,31 @@ class Solution:
                 continue
             if not expected:
                 return False
-            current_expected = expected.pop()
-            if c != current_expected:
+            if c != expected.pop():
                 return False
 
         return not expected
+
+
+class Solution2:
+    def isValid(self, s: str) -> bool:
+        to_close = []
+        closing_map = {")": "(", "]": "[", "}": "{"}
+        for c in s:
+            if c not in closing_map:
+                to_close.append(c)
+                continue
+            if not to_close:
+                return False
+            if closing_map[c] != to_close.pop():
+                return False
+
+        return not to_close
 
 
 test1 = "([])[]({})"
 test2 = "([)]"
 test3 = "((()"
 
-solution = Solution()
+solution = Solution2()
 print(solution.isValid(test1))

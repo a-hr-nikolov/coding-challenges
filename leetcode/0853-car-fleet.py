@@ -19,6 +19,21 @@ class Solution:
         return fleets
 
 
+class Solution2:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        times = [
+            (target - p) / s for p, s in sorted(zip(position, speed), reverse=True)
+        ]
+        fleets = pointer = 0
+
+        for t in times:
+            if pointer < t:
+                fleets += 1
+                pointer = t
+
+        return fleets
+
+
 # target = 12
 # position = [10, 8, 0, 5, 3]
 # speed = [2, 4, 1, 1, 3]
@@ -29,5 +44,5 @@ speed = [2, 1, 3]
 # should be 1 now
 
 
-solution = Solution()
+solution = Solution2()
 print(solution.carFleet(target, position, speed))
